@@ -37,15 +37,14 @@ class _HomescreenState extends State<Homescreen> {
             Form(
               child: TextFormField(
                 controller: input,
+                onFieldSubmitted: (s) => handleAddTolist(),
                 decoration: InputDecoration(
                   hintText: "Todo lists",
                   border: OutlineInputBorder(),
                   suffixIcon: Padding(
                     padding: const EdgeInsetsDirectional.only(end: 12.0),
                     child: IconButton(
-                      onPressed: () {
-                        handleAddTolist();
-                      },
+                      onPressed: handleAddTolist,
                       icon: Icon(
                         Icons.list,
                         color: Colors.blue,
